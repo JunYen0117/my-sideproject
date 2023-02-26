@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'searcharea',
-    component: () => import('../components/SearchArea.vue')
+    component: () => import('../components/NavBar.vue')
   },
   {
     path: '/music',

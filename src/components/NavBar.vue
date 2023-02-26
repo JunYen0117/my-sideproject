@@ -7,7 +7,7 @@
         <span>購物車</span>
         <span v-if="myCartsLength" class="badge bg-dark rounded-circle">{{ myCartsLength }}</span>
       </router-link>
-      <router-link to="/" class="list-group-item">訂單列表</router-link>
+      <!-- <router-link to="/" class="list-group-item">訂單列表</router-link> -->
       <router-link to="/music" class="list-group-item">音樂播放器</router-link>
     </ul>
 
@@ -35,7 +35,7 @@
           <span>購物車</span>
           <span v-if="myCartsLength" class="badge bg-dark rounded-circle">{{ myCartsLength }}</span>
         </router-link>
-        <router-link to="/" class="list-group-item">訂單列表</router-link>
+        <!-- <router-link to="/" class="list-group-item">訂單列表</router-link> -->
         <router-link to="/music" class="list-group-item">音樂播放器</router-link>
       </ul>
     </div>
