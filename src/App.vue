@@ -1,30 +1,48 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view></router-view>
+  <PurchaseInfo
+    @purchaseLength="purchaseLength"
+    @carts="getCartsData"></PurchaseInfo>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// import emitter from '@/methods/emitter.js'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  data () {
+    return {
+      count: {
+        myCartsLength: 0,
+        myCarts: []
+      }
     }
+  },
+  provide () {
+    return {
+      count: this.count
+    }
+  },
+  methods: {
+    purchaseLength (item) {
+      this.count.myCartsLength = item
+    },
+    getCartsData (item) {
+      this.count.myCarts = item
+    }
+  },
+  watch: {
+    $route () {
+      // 路由url改變，清除播放器的計時
+      setTimeout(() => {
+        clearInterval(window.time)
+      }, 100)
+    }
+  },
+  mounted () {
   }
 }
+</script>
+
+<style lang="scss">
+@import './assets/all.scss'
 </style>
