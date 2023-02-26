@@ -37,8 +37,6 @@ export default {
     emitter.on('cartToInfo', (data) => {
       this.myCarts = data.myCarts
       this.myCartsLength = data.myCartsLength
-      console.log(data.myCartsLength)
-      console.log(this.count.myCartsLength)
     })
   }
 }

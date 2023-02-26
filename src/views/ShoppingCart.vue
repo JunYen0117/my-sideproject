@@ -98,7 +98,6 @@ export default {
       const itemIndex = this.countCart.myCarts.findIndex(v => v.id === id)
       this.countCart.myCarts.splice(itemIndex, 1)
       this.countCart.myCartsLength = this.countCart.myCarts.length
-      console.log(this.countCart.myCartsLength)
       emitter.emit('cartToInfo', this.countCart)
     }
   },

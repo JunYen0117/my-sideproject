@@ -126,7 +126,6 @@ export default {
         }
         this.musicCurrentTime = min + ':' + sec
         this.CurrentTimePercentage = this.player.currentTime / this.player.duration * 100 + '%'
-        console.log(this.CurrentTimePercentage)
       }, 300)
       this.player.play() // 開始播放
       this.player.onended = () => {
@@ -185,7 +184,6 @@ export default {
     }
   },
   beforeRouteLeave () {
-    console.log(this.player)
     this.player.load() // 離開路由，關閉音樂
     // clearInterval(window.time)
     // console.log('clear')
